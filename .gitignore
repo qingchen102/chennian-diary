@@ -1,0 +1,28 @@
+# ── 发布运行产物 ──
+# 浏览器用户数据目录（含个人数据、缓存，体积大，切勿入库）
+release/data/
+# 打包出的可执行文件（用 dotnet publish launcher 重新生成）
+release/*.exe
+# 快捷方式（指向本机路径）
+release/app/release.lnk
+
+# ── 字体文件不入库（授权原因，本地保留）──
+# 应用缺字体时「手写体」自动回退到系统楷体；本地使用请把 TTF 放回
+# app/assets/fonts/（文件名见 css/style.css 的 @font-face）
+app/assets/fonts/*.ttf
+release/app/assets/fonts/*.ttf
+
+# ── .NET 构建产物与本地缓存 ──
+.dotnet-cli/
+bin/
+obj/
+*.user
+
+# ── 依赖与系统文件 ──
+node_modules/
+.edge-*/
+Thumbs.db
+Desktop.ini
+
+# ── 发布包产物 ──
+dist/
